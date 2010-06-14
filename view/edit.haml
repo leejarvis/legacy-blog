@@ -1,0 +1,9 @@
+%form{:method => 'post', :action => "/edit", :class => 'postform', :id => "post-#{@post.id}"}
+  %input{:type => 'hidden', :name => '_method', :value => 'put'}
+  %input{:name => 'id', :value => @post.id, :type => 'hidden'}
+  Title: 
+  %input{:name => 'title', :type => 'text', :value => @post.title}
+  %br
+  %textarea{:name => 'body', :rows => '20'} #{@post.body}
+  %br
+  %input{:class =>'submit', :type => 'submit', :value => 'Update'}

@@ -1,0 +1,26 @@
+%div{:class => 'post', :id => "post-#{@post.id}"}
+  %div{:class => 'title'} #{@post.title}
+  %div{:class => 'timestamp'} #{@post.timestamp}
+  %div{:class => 'body'}
+  :preserve
+    #{@post.content}
+  %div{:class => 'viewas'}
+    %a.json{:href => "#{@post.url}.json"} JSON
+    &#8226;
+    %a.yml{:href => "#{@post.url}.yml"} YAML
+    &#8226;
+    %a.xml{:href => "#{@post.url}.xml"} XML
+    &#8226;
+    %a.txt{:href => "#{@post.url}.txt"} TXT
+
+  - if logged_in?
+    %div{:class => 'meta'}
+      %a.edit{:href => "/edit/#{@post.id}"} edit
+      &nbsp;&nbsp;
+      <script type="text/javascript">
+      function confirmdelete() {
+      var del = confirm("Sure 'bout that?");
+      return (del);
+      }
+      </script>
+      %a.delete{:href => "/delete/#{@post.id}", :onClick => "return confirmdelete()"} delete

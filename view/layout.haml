@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Subtle Entropy #{': ' + @post.title if @post}
+    %link{:rel => 'stylesheet', :href => '/base.css', :type => 'text/css'}
+  %body
+    #container
+      #header 
+        %a{:class => 'sitelink', :href => '/'} Subtle Entropy
+        .moto The mindless ramblings of Lee Jarvis
+      #content
+        =yield
+
+    #footer
+      Copyright 2010 by <a href="http://injekt.net">Lee Jarvis</a>
+
+      - if logged_in?
+        %br
+        Logged in as #{session[:user]}. <a href="/logout">logout</a>
