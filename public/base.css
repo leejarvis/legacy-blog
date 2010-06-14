@@ -8,6 +8,10 @@ a, a:active, a:link, a:visited {
     color: #000;
 }
 
+a.tiny {
+    font-size: 0.7em;
+}
+
 .left {
     float: left;
 }
@@ -97,7 +101,7 @@ body {
 }
 
 .post .viewas {
-  font-size: 0.7em;
+    font-size: 0.7em;
 }
 
 .post .meta {
@@ -134,11 +138,11 @@ ol, ul {
 }
 
 form#login {
-  padding: 15px 0 0 0;
+    padding: 15px 0 0 0;
 }
 
 form#login input {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 #footer {
@@ -146,4 +150,5 @@ form#login input {
     font-size: 0.9em;
     color: #3b3b3b;
     margin-bottom: 20px;
+    line-height: 135%;
 }
