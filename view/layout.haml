@@ -2,6 +2,13 @@
 %html
   %head
     %title Subtle Entropy #{': ' + @post.title if @post}
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="keywords" content="Lee Jarvis, blog, ruby, programming, web design" />
+    <meta name="author" content="Lee Jarvis" />
+    <meta name="description" content="A blog which is likely to make you feel dirty after visiting" />
+
+    %link{:rel => 'shortcut icon', :href => '/favicon.ico'}
+    %link{:rel => 'home index', :href => 'http://blog.injekt.net', :type => 'text/html'}
     %link{:rel => 'stylesheet', :href => '/base.css', :type => 'text/css'}
   %body
     #container
