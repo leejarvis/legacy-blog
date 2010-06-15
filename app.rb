@@ -147,6 +147,10 @@ class Blog < Sinatra::Base
     def requires_auth
       redirect '/' unless logged_in?
     end
+
+    def h(text)
+      Rack::Utils.escape_html(text.to_s).gsub(/#([{@$]@?)/, '&#35;\1')
+    end
   end
 end
 
