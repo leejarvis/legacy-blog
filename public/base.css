@@ -78,6 +78,11 @@ body {
     text-align: center;
 }
 
+.post .title a {
+  text-decoration: none;
+  color: #222;
+}
+
 .post .author {
     font-size: 0.9em;
     text-align: center;
