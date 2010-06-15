@@ -1,4 +1,5 @@
 require 'rdiscount'
+require 'time'
 
 class Post < Sequel::Model
   many_to_one :user
@@ -29,6 +30,10 @@ class Post < Sequel::Model
 
   def timestamp
     created_at.strftime("%B %d, %Y")
+  end
+
+  def self.last_updated_timestamp
+    order_by(:created_at.desc).limit(1).first.created_at.xmlschema
   end
 end
 

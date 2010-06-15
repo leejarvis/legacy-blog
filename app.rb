@@ -78,6 +78,12 @@ class Blog < Sinatra::Base
     redirect '/'
   end
 
+  get '/feed' do
+    @posts = Post.order_by(:created_at.desc).all
+    content_type "application/atom+xml"
+    haml :feed, :layout => false
+  end
+
   get '/:id' do |id|
     not_found unless post = Post[id.to_i]
     redirect post.url
