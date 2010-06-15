@@ -131,6 +131,10 @@ body {
     margin-top: 5px;
 }
 
+.comments {
+  margin-top: 30px;
+}
+
 ol, ul {
     margin-left: 50px;
     font-size: 0.9em;
