@@ -21,7 +21,7 @@ class Post < Sequel::Model
   end
 
   def summary(n=400)
-    content[0..n] + '...'
+    RDiscount.new(body[0..n]).to_html + '...'
   end
 
   def content
