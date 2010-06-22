@@ -17,7 +17,7 @@ class Blog < Sinatra::Base
   end
 
   get '/archive' do
-    @posts = Post.all
+    @posts = Post.order(:created_at.desc).all
     haml :archive
   end
 
