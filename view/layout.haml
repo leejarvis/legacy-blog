@@ -20,8 +20,12 @@
         =yield
 
     #footer
-      Copyright 2010 by <a href="http://injekt.net">Lee Jarvis</a><br />
-      <a class="tiny" href="http://github.com/injekt/blog">source</a>
+      %a{:class => 'tiny', :href => '/archive'} archive
+      &#8226;
+      %a{:class => 'tiny', :href => 'http://github.com/injekt/blog'} source
+      %br
+      %br
+      Copyright 2010 by <a href="http://injekt.net">Lee Jarvis</a>
 
       - if logged_in?
         %br

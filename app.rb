@@ -16,6 +16,11 @@ class Blog < Sinatra::Base
     haml :index
   end
 
+  get '/archive' do
+    @posts = Post.all
+    haml :archive
+  end
+
   get '/login' do
     haml :login
   end
