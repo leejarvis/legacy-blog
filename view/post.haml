@@ -4,6 +4,8 @@
   %div{:class => 'body'}
   :preserve
     #{@post.content}
+  %div{:class => 'outside'}
+    <script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script>
   %div{:class => 'viewas'}
     %a.json{:href => "#{@post.url}.json"} JSON
     &#8226;
