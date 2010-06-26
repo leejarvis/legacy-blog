@@ -146,6 +146,7 @@ body {
 
 ol, ul {
     margin-left: 50px;
+    margin-bottom: 30px;
     font-size: 0.9em;
     color: #2e2e2e;
 }
