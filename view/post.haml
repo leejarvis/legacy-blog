@@ -6,6 +6,7 @@
     #{@post.content}
   %div{:class => 'outside'}
     <script src="http://www.stumbleupon.com/hostedbadge.php?s=4"></script>
+    <a href="http://reddit.com/submit" onclick="window.location = 'http://reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="http://reddit.com/static/spreddit1.gif" alt="submit to reddit" border="0" /> </a>
   %div{:class => 'viewas'}
     %a.json{:href => "#{@post.url}.json"} JSON
     &#8226;
