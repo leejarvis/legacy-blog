@@ -13,7 +13,6 @@ class Post < Sequel::Model
     validates_presence [:title, :body, :draft]
 
     validates_format /\d/, :draft
-    validates_format /\d/, :comments
 
     validates_min_length 5,   :title
     validates_min_length 200, :body
