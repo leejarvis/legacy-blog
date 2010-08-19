@@ -1,9 +1,0 @@
-- @posts.each do |post|
-  %div{:class => 'index post', :id => "post-#{post.id}"}
-    %div{:class => 'title'} <a href="#{post.url}">#{post.title}</a>
-    %div{:class => 'timestamp'} #{post.timestamp}
-    %div{:class => 'body'} 
-      :preserve 
-        #{post.summary}
-    %div{:class => 'meta'}
-      %a.read_more{:href => post.url} Read more &raquo;
