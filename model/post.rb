@@ -10,7 +10,7 @@ class Post < Sequel::Model
   end
 
   def validate
-    validates_presence [:title, :body, :comments, :draft]
+    validates_presence [:title, :body, :draft]
 
     validates_format /\d/, :draft
     validates_format /\d/, :comments

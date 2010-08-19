@@ -16,7 +16,6 @@ Sequel.migration do
       String :title,  :null => false
       String :body,   :null => false, :text => true
 
-      Integer :comments,  :null => false, :default => 1
       Integer :draft,     :null => false, :default => 0 
       
       Time :created_at
