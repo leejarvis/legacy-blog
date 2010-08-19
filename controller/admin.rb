@@ -30,6 +30,7 @@ class Admin < Controller
 
     values = request.params
     values["draft"] ||= "0"
+    values["body"] = h(values["body"])
     tags = values.delete("tags")
     action = values.delete("action")
     id = values.delete("id")

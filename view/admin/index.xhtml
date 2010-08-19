@@ -18,12 +18,6 @@
   <label for="draft">Draft:</label>
   <input type="checkbox" name="draft" value="#{ @edit ? @post.draft : 1 }" />
   <br /><br />
-  <label for="comments">Allow Comments</label>
-  <input type="radio" name="comments" value="1" checked="yessir">
-  <span class="small">Yes</span>
-  <input type="radio" name="comments" value="0" />
-  <span class="small">No</span>
-  <br /><br />
   <input type="submit" value="#{ @edit ? 'Update' : 'Create' } Post" />
 </form>
 </p>
