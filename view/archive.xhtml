@@ -1,0 +1,7 @@
+<h2>Archive</h2><br />
+<?r @posts.each do |post| ?>
+<p class="med">#{post.timestamp} - #{post.href} 
+<?r if logged_in? ?>
+<span style="padding-left: 10px">[<a href="/admin?action=edit&id=#{post.id}">edit</a> - <a href="/admin?action=delete&id=#{post.id}">delete</a>]</span>
+<?r end ?></p>
+<?r end ?>

@@ -1,0 +1,6 @@
+<div class="#{ @index ? 'index ' : '' }post" id="post-#{@post.id}" title="#{@post.title}">
+  <div class="title">#{ @index ? @post.href : @post.title }</div>
+  <div class="timestamp">#{@post.timestamp}</div>
+  <div class="body">#{ @index ? @post.summary : @post.content }</div>
+  <div class="tags">#{ @post.tag_links }</div>
+</div>

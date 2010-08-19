@@ -3,13 +3,20 @@ require 'time'
 
 class Post < Sequel::Model
   many_to_one :user
+  many_to_many :tags, join_table: "post_tags"
 
-  def self.add(title, author, body)
-    create :title => title, :author => author, :body => body
+  def self.latest(n)
+    filter(draft: 0).order_by(:created_at.desc).limit(n).all
   end
 
-  def self.last(n=1)
-    order_by(:created_at.desc).limit(n).all
+  def validate
+    validates_presence [:title, :body, :comments, :draft]
+
+    validates_format /\d/, :draft
+    validates_format /\d/, :comments
+
+    validates_min_length 5,   :title
+    validates_min_length 200, :body
   end
 
   def url_title
@@ -20,7 +27,11 @@ class Post < Sequel::Model
     "/#{id}/#{url_title}"
   end
 
-  def summary(n=400)
+  def href
+    %Q{<a href="#{url}">#{title}</a>}
+  end
+
+  def summary
     content.split("</p>").first(2).join("</p>") + '..</p>'
   end
 
@@ -28,12 +39,21 @@ class Post < Sequel::Model
     RDiscount.new(body).to_html
   end
 
+  def tag_names
+    tags.map(&:name)
+  end
+
+  def tags_str
+    tag_names.join(', ')
+  end
+
+  def tag_links
+    tag_names.map do |tag|
+      %Q{<a class="tag small" href="/tag/#{Rack::Utils.escape(tag)}">#{tag}</a>}
+    end.join(' ')
+  end
+
   def timestamp
     created_at.strftime("%B %d, %Y")
   end
-
-  def self.last_updated_timestamp
-    order_by(:created_at.desc).limit(1).first.created_at.xmlschema
-  end
 end
-

@@ -1,0 +1,43 @@
+!!!
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en")
+  %head
+    %title Subtle Entropy
+    = css_for('lee')
+    = js_for('jquery', 'lee')
+  %body
+    #container
+      #header
+        %h1
+          %a(href="/") Subtle Entropy
+        %h2 The mindless ramblings of Lee Jarvis
+      = flashbox
+      #content
+        = @content
+      #footer
+        %p
+          %a(id="contact" href="") Contact
+          %a(href="") Archive
+          %a(href="") Source
+          %a(id="tags" href="") Tags
+          %a(href="") Comments
+          %a(id="login" href="") Login
+          %a(href="http://github.com/injekt") GitHub
+      #login-dialog
+        %form(id="login-form" method="post" action="/login")
+          %label(for="username") Username:
+          %input(type="text" name="username" id="form-username")
+          %br
+          %label(for="password") &nbsp;Password:
+          %input(type="password" name="password" id="form-password")
+          %br
+          %input(type="submit" value="Login")
+          %a(class="close" href="") Forget it, bro
+      #contact-dialog
+        %p
+          Email me at <a href="">lee@jarvis.co</a>
+          %br
+          Tweet me at <a href="http://twitter.com/lee_jarvis">@lee_jarvis</a>
+      #tags-dialog
+        %p
+          - Tag.all.map do |tag|
+            %a(href="/tag/#{tag.name}/" id="tag-#{tag.name}") #{tag.name}

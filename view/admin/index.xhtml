@@ -1,0 +1,37 @@
+<h1>Add Post</h1>
+<p>
+<form class="admin" id="#{ @edit ? 'edit' : 'add' }-post" method="post" action="#{r(:post)}">
+  <?r if @edit ?>
+  <input type="hidden" name="action" value="edit" />
+  <input type="hidden" name="id" value="#{@post.id}" />
+  <?r end ?>
+  <label for="title">Title:</label>
+  <input type="text" name="title" #{ @edit ? "value=\"#{@post.title}\" " : "" }/>
+  <br /><br />
+  <label for="body">Body:</label> 
+  <br />
+  <textarea name="body">#{ @edit ? @post.body : '' }</textarea>
+  <br /><br />
+  <label for="tags">Tags:</label> <span class="small">(seperate with commas)</span>
+  <input type="text" name="tags" #{ @edit ? "value=\"#{@post.tags_str}\" " : '' }/>
+  <br /><br />
+  <label for="draft">Draft:</label>
+  <input type="checkbox" name="draft" value="#{ @edit ? @post.draft : 1 }" />
+  <br /><br />
+  <label for="comments">Allow Comments</label>
+  <input type="radio" name="comments" value="1" checked="yessir">
+  <span class="small">Yes</span>
+  <input type="radio" name="comments" value="0" />
+  <span class="small">No</span>
+  <br /><br />
+  <input type="submit" value="#{ @edit ? 'Update' : 'Create' } Post" />
+</form>
+</p>
+<br /><br />
+<?r if not @tags.empty? ?>
+<h1>Delete Tags</h1>
+<p>
+<?r @tags.each do |tag| ?>
+<a href="/admin?action=delete-tag&id=#{tag.id}" class="tag">#{tag.name} <span style="font-size: 0.6em;">x</span></a>
+<?r end ?>
+<?r end ?>

@@ -1,5 +1,5 @@
-require 'app'
+#!/usr/bin/env rackup
 
-use Rack::ShowExceptions
-
-run Blog
+require ::File.expand_path('../app', __FILE__)
+Ramaze.start(:root => __DIR__, :started => true)
+run Ramaze

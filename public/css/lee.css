@@ -1,0 +1,255 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+html, body, div, ul, ol, li, h1, h2 {
+  padding: 0;
+  margin: 0;
+}
+
+ol, ul {
+  margin-left: 50px;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  color: #2e2e2e;
+}
+
+pre {
+  background: #303030;
+  padding: 15px;
+  color: #fff;
+  font: 0.9em 'Droid Sans Mono', monospace;
+}
+
+a, a:link, a:visited, a:active {
+  outline: none;
+  text-decoration: none;
+  color: #b63131;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #d44f4f;
+}
+
+.small {
+  font-size: 0.7em;
+}
+
+.med {
+  font-size: 0.8em;
+}
+
+body {
+  font: 100% 'Droid Sans', Helvetica, sans-serif;
+  background: #fff;
+  color: #363636;
+}
+
+div#container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+div#header {
+  text-align: center;
+}
+
+div#header h1 {
+  margin: 15px 0 10px 0;
+}
+
+div#header h1 a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #222;
+}
+
+div#header h2 {
+  color: #7b7878;
+  font-size: 1em;
+}
+
+div.flash {
+  color: #555555;
+  margin: 20px;
+  padding: 10px;
+  font-size: 0.8em;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+div#flash_error {
+  border: 1px solid #f3a1a1;
+  background: #f9efef;
+}
+
+div#flash_notice {
+  background: #dbfdd4;
+  border: 1px solid #7ccf6b;
+}
+
+div#content {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 15px;
+  margin-top: 25px;
+}
+
+div.post {
+  margin-top: 10px;
+}
+
+div.index.post {
+  margin-bottom: 30px;
+}
+
+div.post div.title {
+  font-weight: bold;
+  font-size: 1.8em;
+  text-align: center;
+}
+
+div.post div.title a {
+  text-decoration: none;
+  color: #222;
+}
+
+div.post div.timestamp {
+  font-size: 0.9em;
+  color: #aaa;
+  text-align: center;
+}
+
+div.post div.body {
+  line-height: 120%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+div.post img {
+  margin: 20px;
+}
+
+div.post div.tags {
+  text-align: right;
+}
+
+div#footer {
+  margin: 20px 0;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+div#footer a, a.tag {
+  padding: 4px 7px;
+  text-decoration: none;
+  border: 1px solid #f3a1a1;
+  background: #f9efef;
+  color: #555555;
+  margin: 0 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+a.tag.small {
+  font-size: 0.7em;
+  padding: 2px 5px;
+  margin: 0 2px;
+}
+
+div#footer a:hover {
+  border-color: #f38f8f;
+  background: #f9dede;
+}
+
+div#footer a.alive {
+  background: #dbfdd4;
+  border: 1px solid #7ccf6b;
+}
+
+div#footer .blue, a.tag {
+  padding: 4px 7px;
+  background: #d3ddec;
+  border: 1px solid #6d8bb5;
+  color: #555555;
+  margin: 0 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+a.tag:hover {
+  background: #bed0e8;
+}
+
+div#login-dialog, div#contact-dialog {
+  font-size: 0.8em;
+  color: #494949;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 300px;
+  padding: 20px 0;
+  border: 1px solid #7ccf6b;
+  background: #dbfdd4;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+div#contact-dialog {
+  padding: 0;
+}
+
+div#tags-dialog {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 800px;
+}
+
+div#login-dialog input[type="text"], input[type="password"] {
+  padding: 3px;
+  margin: 0 0 5px 3px;
+  font-size: 0.9em;
+}
+
+div#login-dialog input[type="submit"] {
+  padding: 2px 7px;
+  font-size: 0.9em;
+  margin: 10px 25px 0 0;
+}
+
+form.admin {
+  font-size: 0.9em;
+}
+
+textarea {
+  padding: 5px;
+  font: inherit;
+}
+
+form.admin textarea {
+  width: 860px;
+  height: 300px;
+}
+
+input[type="text"] {
+  padding: 3px;
+}
+
+form.admin input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+  left: -2px;
+}
+
+input[type="submit"] {
+  padding: 4px 7px;
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  color: #555555;
+  margin: 0 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
