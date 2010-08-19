@@ -17,7 +17,10 @@ pre {
   background: #303030;
   padding: 15px;
   color: #fff;
-  font: 0.9em 'Droid Sans Mono', monospace;
+}
+
+code {
+  font: 1.1em 'Droid Sans Mono', monospace;
 }
 
 a, a:link, a:visited, a:active {
