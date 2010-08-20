@@ -18,7 +18,7 @@
     <link href='http://blog.injekt.net#{ post.url }' />
     <published>#{ post.created_at.iso8601 }</published>
     <updated>#{ post.updated_at.iso8601 }</updated>
-    <summary>#{ html_escape(post.summary) }</summary>
+    <summary type="text/html">#{ html_escape(post.summary) }</summary>
     <content type="text/html">#{ html_escape(post.content) }</content>
   </entry>
   <?r end ?>
