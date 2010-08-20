@@ -1,4 +1,10 @@
 <h1>Add Post</h1>
+<span class="small">Or find a post to <a id="admin-edit" href="">edit</a></span>
+<div id="admin-post-listing">
+  <?r @posts.each do |post| ?>
+  <a href="?action=edit&id=#{post.id}">#{post.title}</a><br />
+  <?r end ?>
+</div>
 <p>
 <form class="admin" id="#{ @edit ? 'edit' : 'add' }-post" method="post" action="#{r(:post)}">
   <?r if @edit ?>

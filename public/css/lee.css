@@ -260,3 +260,11 @@ input[type="submit"] {
 #disqus_thread {
   margin-top: 50px;
 }
+
+div#admin-post-listing {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #d3ddec;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}

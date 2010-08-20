@@ -21,6 +21,7 @@ class Admin < Controller
       end
     end
 
+    @posts = Post.order_by(:created_at.desc).all
     @tags = Tag.all
   end
 

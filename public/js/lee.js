@@ -7,6 +7,7 @@ $(document).ready(function() {
   $("#login-dialog").hide();
   $("#contact-dialog").hide();
   $("#tags-dialog").hide();
+  $("#admin-post-listing").hide();
 
   $("#login").toggle(function() {
     $(this).addClass('alive');
@@ -46,6 +47,16 @@ $(document).ready(function() {
     $("#tags-dialog").slideUp();
     $(this).removeClass('blue');
     return false;
+  });
+
+  $("#admin-edit").click(function() {
+    $("#admin-post-listing").slideDown();
+    return false;  
+  });
+
+  $("#admin-post-listing a").click(function() {
+    $(this).parent().slideUp();
+    return true;
   });
 
 });
