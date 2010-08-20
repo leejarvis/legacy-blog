@@ -1,18 +1,14 @@
 <?r if @tag ?>
-<h2> Displaying posts with tag `#{@tag.name}`</h2><br />
+<div class='flash' id='flash_notice'>Viewing posts with tag `#{@tag.name}`</div>
+<?r end ?>
+<?r if @posts.empty? ?>
+<h1>Weird</h1>
+<p>That's odd, there doesn't appear to be any posts</p>
+<?r else ?>
 <?r @posts.each do |post| ?>
 #{ render_partial(:post, post: post, index: true) }
 <?r end ?>
-<?r else ?>
-  <?r if @posts.empty? ?>
-  <h1>Weird</h1>
-  <p>That's odd, there doesn't appear to be any posts</p>
-  <?r else ?>
-  <?r @posts.each do |post| ?>
-  #{ render_partial(:post, post: post, index: true) }
-  <?r end ?>
-  <?r if not @tag ?>
-  <div style="text-align: right"><a href="/archive">Older posts &raquo;</a></div>
-  <?r end ?>
-  <?r end ?>
+<?r if not @tag ?>
+<div style="text-align: right"><a href="/archive">Older posts &raquo;</a></div>
+<?r end ?>
 <?r end ?>
