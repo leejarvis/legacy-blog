@@ -23,6 +23,7 @@ class Main < Controller
   end
 
   def feed
+    action.layout = nil
     @posts = Post.order_by(:created_at.desc).all
     @updated = @posts.last.updated_at
   end
