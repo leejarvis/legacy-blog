@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  function scrollDown() {
+    $('html, body').animate({scrollTop: $("#container").height()}, 800);
+  }
+
   $("#login-dialog").hide();
   $("#contact-dialog").hide();
   $("#tags-dialog").hide();
@@ -8,6 +12,7 @@ $(document).ready(function() {
     $(this).addClass('alive');
     $("#login-dialog").slideDown();
     $("#form-username").focus();
+    scrollDown();
     return false;
   }, function() {
     $("#login-dialog").slideUp();
@@ -24,6 +29,7 @@ $(document).ready(function() {
   $("#contact").toggle(function() {
     $(this).addClass('alive');
     $("#contact-dialog").slideDown();
+    scrollDown();
     return false;
   }, function() {
     $("#contact-dialog").slideUp();
@@ -34,6 +40,7 @@ $(document).ready(function() {
   $("#tags").toggle(function() {
     $(this).addClass('blue');
     $("#tags-dialog").slideDown();
+    scrollDown();
     return false;
   }, function() {
     $("#tags-dialog").slideUp();
