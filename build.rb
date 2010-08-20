@@ -6,16 +6,17 @@ require_relative 'model/init'
 
 doc = Nokogiri::HTML open("http://blog.injekt.net/archive")
 
-max = doc.search("//li").size
+max = 24
 
 doc.search("//li").each do |item|
+  max -= 1
+  max -= 1 if [21, 2].include?(max)
   date, title = item.text.match(/\s+\[([^\]]+)\] ([^\n]+)/).captures
   body = open("http://blog.injekt.net" + item.at("a")[:href] + '.txt').read
   time = Date.parse(date).to_time
 
   post = Post.new
   post.id = max
-  max -= 1
   post.title = title
   post.body = body
   post.draft = "0"
