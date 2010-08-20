@@ -15,11 +15,11 @@
   <entry>
     <id>injekt:subtle_entropy#{ post.href }</id>
     <title>#{ post.title }</title>
-    <link href='http://blog.injekt.net#{ post.href }' />
+    <link href='http://blog.injekt.net#{ post.url }' />
     <published>#{ post.created_at.iso8601 }</published>
     <updated>#{ post.updated_at.iso8601 }</updated>
-    <summary>#{ post.summary }</summary>
-    <content type="text/html">#{ post.content }</content>
+    <summary>#{ html_escape(post.summary) }</summary>
+    <content type="text/html">#{ html_escape(post.content) }</content>
   </entry>
   <?r end ?>
 </feed>
