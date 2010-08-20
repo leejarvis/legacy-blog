@@ -3,7 +3,7 @@
   <div class="timestamp">#{@post.timestamp}</div>
   <?r if logged_in? ?>
   <div class="meta">
-    <span class="small"><a href="">edit</a> - <a href="">delete</a></span>
+    <a href="/admin?action=edit&id=#{@post.id}">edit</a> - <a href="/admin?action=delete&id=#{@post.id}">delete</a>
   </div>
   <?r end ?>
   <div class="body">#{ @index ? html_unescape(@post.summary) + "<a class=\"small\" href=\"#{@post.url}\">read more..</a>" : html_unescape(@post.content) }</div>
