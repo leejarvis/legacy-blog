@@ -11,5 +11,8 @@
   <?r @posts.each do |post| ?>
   #{ render_partial(:post, post: post, index: true) }
   <?r end ?>
+  <?r if not @tag ?>
+  <div style="text-align: right"><a href="/archive">Older posts &raquo;</a></div>
+  <?r end ?>
   <?r end ?>
 <?r end ?>
