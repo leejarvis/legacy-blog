@@ -1,6 +1,11 @@
 <div class="#{ @index ? 'index ' : '' }post" id="post-#{@post.id}" title="#{@post.title}">
   <div class="title">#{ @index ? @post.href : @post.title }</div>
   <div class="timestamp">#{@post.timestamp}</div>
+  <?r if logged_in? ?>
+  <div class="meta">
+    <span class="small"><a href="">edit</a> - <a href="">delete</a></span>
+  </div>
+  <?r end ?>
   <div class="body">#{ @index ? html_unescape(@post.summary) + "<a class=\"small\" href=\"#{@post.url}\">read more..</a>" : html_unescape(@post.content) }</div>
   <div class="tags">#{ @post.tag_links }</div>
 </div>

@@ -137,6 +137,11 @@ div.post div.tags {
   text-align: right;
 }
 
+div.post div.meta {
+  text-align: center;
+  padding: 5px 0;
+}
+
 div#footer {
   margin: 20px 0;
   font-size: 0.8em;
