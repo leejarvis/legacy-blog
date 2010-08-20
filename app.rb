@@ -1,4 +1,5 @@
 require 'ramaze'
+require 'time'
 
 Ramaze.options.roots = [__DIR__]
 

@@ -22,6 +22,11 @@ class Main < Controller
     @post = Post[id]
   end
 
+  def feed
+    @posts = Post.order_by(:created_at.desc).all
+    @updated = @posts.last.updated_at
+  end
+
   def tag(tagstr)
     not_found unless tag = Tag[:name => Rack::Utils.unescape(tagstr)]
     render_view(:posts, posts: tag.posts, tag: tag)

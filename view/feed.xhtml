@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<feed xmlns='http://www.w3.org/2005/Atom'>
+  <title>Subtle Entropy</title>
+  <subtitle>The mindless ramblings of Lee Jarvis</subtitle>
+  <link rel='self' href='http://blog.injekt.net/feed' />
+  <link href='http://blog.injekt.net' />
+  <author>
+    <name>Lee Jarvis</name>
+    <email>lee@jarvis.co</email>
+    <uri>http://injekt.net</uri>
+  </author>
+  <updated>#{ @updated.iso8601 }</updated>
+  <id>http://blog.injekt.net/feed</id>
+  <?r @posts.each do |post| ?>
+  <entry>
+    <id>injekt:subtle_entropy#{ post.href }</id>
+    <title>#{ post.title }</title>
+    <link href='http://blog.injekt.net#{ post.href }' />
+    <published>#{ post.created_at.iso8601 }</published>
+    <updated>#{ post.updated_at.iso8601 }</updated>
+    <summary>#{ post.summary }</summary>
+    <content type="text/html">#{ post.content }</content>
+  </entry>
+  <?r end ?>
+</feed>
