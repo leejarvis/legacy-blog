@@ -59,4 +59,14 @@ $(document).ready(function() {
     return true;
   });
 
+  $("#down").click(function() {
+    scrollDown();
+    return false;
+  });
+
+  $("#up").click(function() {
+    $('html, body').animate({scrollTop: 0}, 800);
+    return false;
+  });
+
 });

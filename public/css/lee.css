@@ -34,6 +34,10 @@ a:hover {
   color: #d44f4f;
 }
 
+a#down {
+  font-size: 0.8em;
+}
+
 .small {
   font-size: 0.7em;
 }
