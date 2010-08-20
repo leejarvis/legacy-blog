@@ -9,49 +9,49 @@ $(document).ready(function() {
   $("#tags-dialog").hide();
   $("#admin-post-listing").hide();
 
-  $("#login").toggle(function() {
+  $("#login").toggle(function(e) {
+    e.preventDefault();
     $(this).addClass('alive');
     $("#login-dialog").slideDown();
     $("#form-username").focus();
     scrollDown();
-    return false;
-  }, function() {
+  }, function(e) {
+    e.preventDefault();
     $("#login-dialog").slideUp();
     $(this).removeClass('alive');
-    return false;
   });
 
-  $("#login-dialog .close").click(function() {
+  $("#login-dialog .close").click(function(e) {
+    e.preventDefault();
     $("#login-dialog").slideUp();
     $("#login").removeClass('alive');
-    return false;
   });
 
-  $("#contact").toggle(function() {
+  $("#contact").toggle(function(e) {
+    e.preventDefault();
     $(this).addClass('alive');
     $("#contact-dialog").slideDown();
     scrollDown();
-    return false;
-  }, function() {
+  }, function(e) {
+    e.preventDefault();
     $("#contact-dialog").slideUp();
     $(this).removeClass('alive');
-    return false;
   });
 
-  $("#tags").toggle(function() {
+  $("#tags").toggle(function(e) {
+    e.preventDefault();
     $(this).addClass('blue');
     $("#tags-dialog").slideDown();
     scrollDown();
-    return false;
-  }, function() {
+  }, function(e) {
+    e.preventDefault();
     $("#tags-dialog").slideUp();
     $(this).removeClass('blue');
-    return false;
   });
 
-  $("#admin-edit").click(function() {
+  $("#admin-edit").click(function(e) {
+    e.preventDefault();
     $("#admin-post-listing").slideDown();
-    return false;  
   });
 
   $("#admin-post-listing a").click(function() {
@@ -59,14 +59,14 @@ $(document).ready(function() {
     return true;
   });
 
-  $("#down").click(function() {
+  $("#down").click(function(e) {
+    e.preventDefault();
     scrollDown();
-    return false;
   });
 
-  $("#up").click(function() {
+  $("#up").click(function(e) {
+    e.preventDefault();
     $('html, body').animate({scrollTop: 0}, 800);
-    return false;
   });
 
 });
