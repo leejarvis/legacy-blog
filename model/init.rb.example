@@ -1,0 +1,26 @@
+require 'sequel'
+
+# Example init.rb file
+#
+# Rename to 'init.rb' and run `rake db:migrate`
+
+DB = Sequel.mysql(
+  username: 'injekt',
+  password: 'injekt-blog',
+  database: 'blog'
+)
+
+class Sequel::Model
+  plugin :timestamps, update_on_create: true
+  plugin :validation_helpers
+end
+
+require_relative 'user'
+require_relative 'post'
+require_relative 'tag'
+
+if DB.table_exists?(:users)
+  if User.empty?
+    User.add "admin", "foo bar"
+  end
+end
