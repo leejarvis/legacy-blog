@@ -9,15 +9,3 @@
   <div class="body">#{ @index ? html_unescape(@post.summary) + "<a class=\"small\" href=\"#{@post.url}\">read more..</a>" : html_unescape(@post.content) }</div>
   <div class="tags">#{ @post.tag_links }</div>
 </div>
-
-<?r if not @index ?>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_identifier = #{ @post.id };  
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://injekt.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<?r end ?>
